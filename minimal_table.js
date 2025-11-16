@@ -19,7 +19,7 @@
             this.$msg.textContent = "Component Loaded. Waiting for update...";
         }
 
-        onCustomWidgetAfterUpdate(changedProperties) {
+        onCustomWidgetAfterUpdate() {
             const dataBinding = this.dataBindings.DataFeed; 
 
             if (dataBinding && typeof dataBinding.get === 'function') {
@@ -39,12 +39,13 @@
                     this.$msg.className = "error";
                 });
 
-            } else {
+            } /*else {
                 // THIS IS THE ERROR YOU ARE SEEING
                 this.$msg.textContent = "Error: 'DataFeed' object is missing. Check .json manifest.";
                 this.$msg.className = "error";
-            }
+            }*/
         }
     }
     customElements.define("minimal-table-main-v1", MinimalTableMain);
+
 })();
